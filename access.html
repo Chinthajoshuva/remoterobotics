@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Access - Remote Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" class="text-only">Remote Robotics Lab</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="access.html" class="active">Robot Access</a>
+        </div>
+    </nav>
+
+    <main class="access-container">
+        <div class="session-info">
+            <h2>Current Session</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>Selected Robot</h3>
+                    <p id="currentRobot">UR5 Robot Arm</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time Remaining</h3>
+                    <div class="countdown-timer" id="countdownTimer">
+                        <span id="minutes">30</span>:<span id="seconds">00</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Session Date</h3>
+                    <p id="sessionDate">Today</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="workspace-grid">
+            <!-- Camera Feeds -->
+            <div class="camera-section">
+                <h3>Camera Feeds</h3>
+                <div class="camera-grid">
+                    <div class="camera-feed main-feed">
+                        <div class="feed-header">
+                            <span>Main Camera</span>
+                            <button class="btn-icon"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="video-container" id="mainFeed">
+                            <!-- Video feed will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="camera-feed">
+                        <div class="feed-header">
+                            <span>Side View</span>
+                            <button class="btn-icon"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="video-container" id="sideFeed">
+                            <!-- Video feed will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="camera-feed">
+                        <div class="feed-header">
+                            <span>Top View</span>
+                            <button class="btn-icon"><i class="fas fa-expand"></i></button>
+                        </div>
+                        <div class="video-container" id="topFeed">
+                            <!-- Video feed will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jupyter Notebook -->
+            <div class="notebook-section">
+                <h3>Jupyter Notebook</h3>
+                <div class="notebook-container">
+                    <div class="notebook-toolbar">
+                        <button class="btn-tool" title="Run Cell"><i class="fas fa-play"></i></button>
+                        <button class="btn-tool" title="Stop"><i class="fas fa-stop"></i></button>
+                        <button class="btn-tool" title="Restart Kernel"><i class="fas fa-redo"></i></button>
+                        <button class="btn-tool" title="Save"><i class="fas fa-save"></i></button>
+                    </div>
+                    <div class="notebook-content" id="jupyterNotebook">
+                        <!-- Jupyter Notebook iframe will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robot Control -->
+            <div class="control-section">
+                <h3>Robot Control</h3>
+                <div class="control-panel">
+                    <div class="control-group">
+                        <h4>Joint Control</h4>
+                        <div class="joint-sliders">
+                            <div class="slider-group">
+                                <label>Joint 1</label>
+                                <input type="range" min="-180" max="180" value="0" class="joint-slider">
+                                <span class="slider-value">0°</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Joint 2</label>
+                                <input type="range" min="-180" max="180" value="0" class="joint-slider">
+                                <span class="slider-value">0°</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Joint 3</label>
+                                <input type="range" min="-180" max="180" value="0" class="joint-slider">
+                                <span class="slider-value">0°</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h4>End Effector</h4>
+                        <div class="button-grid">
+                            <button class="btn-control">Open Gripper</button>
+                            <button class="btn-control">Close Gripper</button>
+                            <button class="btn-control">Home Position</button>
+                            <button class="btn-control danger">Emergency Stop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 

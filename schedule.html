@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Robot Session</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" iclass="text-only">Remote Robotics Lab</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="schedule.html" class="active">Schedule</a>
+            <a href="access.html">Robot Access</a>
+            <button id="logoutBtn" class="btn-secondary">Logout</button>
+        </div>
+    </nav>
+
+    <main class="schedule-container">
+        <h2>Schedule Your Robot Session</h2>
+        
+        <div class="scheduling-grid">
+            <!-- Robot Selection -->
+            <div class="robot-selection">
+                <h3>Available Robots</h3>
+                <div class="robot-list">
+                    <div class="robot-card" data-robot-id="1">
+                        <img src="assets/images/UR5.png" alt="UR5 Robot Arm">
+                        <h4>UR5 Robot Arm</h4>
+                        <p>6-DOF Robotic Arm</p>
+                        <span class="status available">Available</span>
+                    </div>
+                    <div class="robot-card" data-robot-id="2">
+                        <img src="assets/images/A200.jpg" alt="Mobile Robot">
+                        <h4>Mobile Robot</h4>
+                        <p>Autonomous Navigation Platform</p>
+                        <span class="status maintenance">Maintenance</span>
+                    </div>
+                    <div class="robot-card" data-robot-id="3">
+                        <img src="assets/images/drone.jpg" alt="Drone">
+                        <h4>Drone</h4>
+                        <p>Aerial Robot Platform</p>
+                        <span class="status available">Available</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar and Time Slots Container -->
+            <div class="calendar-time-container">
+                <!-- Calendar -->
+                <div class="calendar-wrapper">
+                    <div class="calendar-header">
+                        <button id="prevMonth" class="calendar-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">September 2023</h3>
+                        <button id="nextMonth" class="calendar-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                        <!-- Calendar days will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Time Slots -->
+                <div class="time-slots">
+                    <h3>Available Time Slots</h3>
+                    <div class="time-slots-grid">
+                        <!-- Time slots will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form" style="display: none;">
+            <h3>Confirm Your Booking</h3>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="selectedRobot">Selected Robot:</label>
+                    <input type="text" id="selectedRobot" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="selectedDate">Date:</label>
+                    <input type="text" id="selectedDate" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="selectedTime">Time:</label>
+                    <input type="text" id="selectedTime" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (hours):</label>
+                    <select id="duration" required>
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3">3 hours</option>
+                        <option value="4">4 hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="purpose">Purpose of Use:</label>
+                    <textarea id="purpose" required></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn-secondary" id="cancelBooking">Cancel</button>
+                    <button type="submit" class="btn-primary">Confirm Booking</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="booking-confirmation" id="bookingConfirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <i class="fas fa-calendar-check"></i>
+                <h2>Confirm Your Booking</h2>
+            </div>
+            <div class="confirmation-details">
+                <div class="detail-item">
+                    <span class="detail-label">Date:</span>
+                    <span id="confirmDate"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Time:</span>
+                    <span id="confirmTime"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Robot:</span>
+                    <span id="confirmRobot"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Duration:</span>
+                    <select id="confirmDuration">
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3">3 hours</option>
+                    </select>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Purpose:</span>
+                    <textarea id="confirmPurpose" rows="3" placeholder="Enter the purpose of your booking"></textarea>
+                </div>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn-secondary" id="cancelConfirmation">Cancel</button>
+                <button class="btn-primary" id="confirmBooking">Confirm Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

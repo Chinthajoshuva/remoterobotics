@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Robotics Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/images/Software Gurukulam PNG.png" alt="" class="logo-img">
+            <div class="brand-text">
+                <span class="brand-name"></span>
+                <span class="brand-tagline">Learn Grow  & succeed </span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#workshops">Workshops</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-split">
+            <div class="hero-video">
+                <h1>Learn Robotics & AI</h1>
+                <div class="video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videos/videoplayback.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="hero-contact">
+                <div class="contact-form-container">
+                    <h2>Book a Live Class, For Free!</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="program">Select Program</label>
+                            <select id="program" name="program" required>
+                                <option value="">Choose a program</option>
+                                <option value="robotics">Robotics</option>
+                                <option value="ai">Artificial Intelligence</option>
+                                <option value="ml">Machine Learning</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="phone-input">
+                                <select class="country-code" id="countryCode" name="countryCode" required>
+                                    <option value="+91">+91</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <button type="submit" class="cta-button">BOOK FREE LIVE CLASS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="features-container">
+        <!-- Core Initiatives Section -->
+        <section class="programs-section" id="programs">
+            <h2>Our Core Initiatives</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Innovation Lab</h3>
+                    <p>Driving Continuous Research in AI & Robotics</p>
+                    <ul class="initiative-list">
+                        <li><i class="fas fa-check"></i> AI & Robotics Research</li>
+                        <li><i class="fas fa-check"></i> Advanced Algorithm Development</li>
+                        <li><i class="fas fa-check"></i> Industry & Academic Collaborations</li>
+                    </ul>
+                    <a href="research.html" class="program-btn">View Research</a>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Remote Robotics & AI Lab</h3>
+                    <p>Hands-On Learning, Anytime, Anywhere</p>
+                    <ul class="initiative-list">
+                        <li><i class="fas fa-check"></i> Remote Robot Control & Programming</li>
+                        <li><i class="fas fa-check"></i> AI Model Training & Testing</li>
+                        <li><i class="fas fa-check"></i> Real-Time Data & Performance Analysis</li>
+                    </ul>
+                    <a href="schedule.html" class="program-btn">Access Lab</a>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Software Gurukulam Community</h3>
+                    <p>Learn, Collaborate, and Innovate</p>
+                    <ul class="initiative-list">
+                        <li><i class="fas fa-check"></i> Expert Mentorship & Workshops</li>
+                        <li><i class="fas fa-check"></i> Open-Source AI & Robotics Projects</li>
+                        <li><i class="fas fa-check"></i> Career Development & Networking</li>
+                    </ul>
+                    <a href="schedule.html" class="program-btn">Join Community</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="courses-section" id="courses">
+            <h2>Featured AI & Robotics Courses</h2>
+            <p class="section-subtitle">Learn from experts. Gain hands-on experience. Build the future.</p>
+            
+            <div class="courses-nav">
+                <button class="course-nav-btn active" data-category="robotics">
+                    <i class="fas fa-robot"></i> Robotics
+                </button>
+                <button class="course-nav-btn" data-category="ai">
+                    <i class="fas fa-brain"></i> AI & ML
+                </button>
+            </div>
+
+            <div class="courses-container">
+                <div class="courses-grid active" id="robotics-courses">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/Robot_arm_1.jpg" alt="Introduction to Robotics">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>Introduction to Robotics</h4>
+                            <p>Learn the fundamentals of robotics, including kinematics, dynamics, and control.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 6 Weeks</span>
+                                <span><i class="fas fa-user-graduate"></i> Beginner-Friendly</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/ros.png" alt="ROS2 Development">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>ROS2 for Robotics Development</h4>
+                            <p>Master the Robot Operating System (ROS2) for autonomous robot programming.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                                <span><i class="fas fa-tools"></i> Hands-on Labs</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/nav2.png" alt="Robot Navigation">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>Mobile Robot Navigation</h4>
+                            <p>Explore SLAM, motion planning, and autonomous navigation techniques.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 10 Weeks</span>
+                                <span><i class="fas fa-broadcast-tower"></i> Real-World Demos</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="courses-grid" id="ai-courses">
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/ml-robotics.jpg" alt="Machine Learning for Robotics">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>Machine Learning for Robotics</h4>
+                            <p>Train AI models to enhance robot perception and decision-making.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 6 Weeks</span>
+                                <span><i class="fas fa-chart-line"></i> Python & TensorFlow</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/deep-learning.jpg" alt="Deep Learning">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>Deep Learning for Computer Vision</h4>
+                            <p>Use CNNs & AI to process and understand images for robotics applications.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 8 Weeks</span>
+                                <span><i class="fas fa-robot"></i> Practical AI Labs</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-image">
+                            <img src="assets/images/reinforcement.jpg" alt="Reinforcement Learning">
+                            <div class="course-overlay">
+                                <span class="course-level"><i class="fas fa-signal"></i> Advanced</span>
+                            </div>
+                        </div>
+                        <div class="course-content">
+                            <h4>Reinforcement Learning</h4>
+                            <p>Teach robots to learn through trial and error using RL algorithms.</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-clock"></i> 10 Weeks</span>
+                                <span><i class="fas fa-gamepad"></i> Real & Simulated Experiments</span>
+                            </div>
+                            <a href="#" class="course-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-benefits">
+                <h3>Why Enroll?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h4>Expert-Led Courses</h4>
+                        <p>Learn from top robotics and AI professionals</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-hands-on"></i>
+                        <h4>Hands-On Projects</h4>
+                        <p>Work with real robots and AI tools</p>
+                    </div>
+                    <div class="benefit-item">
+                <i class="fas fa-clock"></i>
+                        <h4>24/7 Access</h4>
+                        <p>Learn anytime, anywhere</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Certifications</h4>
+                        <p>Earn industry-recognized credentials</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-cta">
+                <h2>Ready to Start Your Learning Journey?</h2>
+                <a href="#" class="cta-button">Explore All Courses</a>
+            </div>
+        </section>
+
+        <section class="workshops-section" id="workshops">
+            <h2>Upcoming Workshops</h2>
+            <p class="section-subtitle">Join our expert-led workshops to enhance your robotics and AI skills</p>
+            
+            <div class="workshops-grid">
+                <div class="workshop-card">
+                    <div class="workshop-date">
+                        <span class="day">15</span>
+                        <span class="month">Mar</span>
+                    </div>
+                    <div class="workshop-content">
+                        <h3>ROS2 Fundamentals</h3>
+                        <p>Learn the basics of Robot Operating System 2.0 with hands-on exercises</p>
+                        <div class="workshop-meta">
+                            <span><i class="fas fa-clock"></i> 4 Hours</span>
+                            <span><i class="fas fa-users"></i> Max 20 Participants</span>
+                        </div>
+                        <a href="schedule.html" class="workshop-btn">Register Now</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div class="workshop-date">
+                        <span class="day">22</span>
+                        <span class="month">Mar</span>
+                    </div>
+                    <div class="workshop-content">
+                        <h3>AI for Robotics</h3>
+                        <p>Explore machine learning applications in robotics and automation</p>
+                        <div class="workshop-meta">
+                            <span><i class="fas fa-clock"></i> 6 Hours</span>
+                            <span><i class="fas fa-users"></i> Max 15 Participants</span>
+                        </div>
+                        <a href="schedule.html" class="workshop-btn">Register Now</a>
+                    </div>
+                </div>
+
+                <div class="workshop-card">
+                    <div class="workshop-date">
+                        <span class="day">29</span>
+                        <span class="month">Mar</span>
+                    </div>
+                    <div class="workshop-content">
+                        <h3>Robot Vision & Perception</h3>
+                        <p>Master computer vision techniques for robotic applications</p>
+                        <div class="workshop-meta">
+                            <span><i class="fas fa-clock"></i> 5 Hours</span>
+                            <span><i class="fas fa-users"></i> Max 18 Participants</span>
+                        </div>
+                        <a href="schedule.html" class="workshop-btn">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section" id="testimonials">
+            <h2>What Our Students Say</h2>
+            <p class="section-subtitle">Hear from our community of learners and researchers</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The hands-on experience with real robots was invaluable. The instructors are knowledgeable and supportive."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Sarah Chen">
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Robotics Engineer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The AI courses are cutting-edge. I learned practical skills that I use daily in my research."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="David Kumar">
+                        <div class="author-info">
+                            <h4>David Kumar</h4>
+                            <p>AI Researcher</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The 24/7 access to the lab and the supportive community made learning robotics accessible and enjoyable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50" alt="Maria Rodriguez">
+                        <div class="author-info">
+                            <h4>Maria Rodriguez</h4>
+                            <p>Graduate Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>1000+</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>50+</h3>
+                <p>Learning Programs</p>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <h2>About Us</h2>
+            <p class="section-subtitle">Empowering the Future Through Innovation</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Software Gurukulam is a pioneering institution dedicated to advancing education and innovation in AI and Robotics. Our mission is to bridge the gap between theoretical knowledge and practical application, providing students and professionals with hands-on experience in cutting-edge technologies.</p>
+                    <p>Through our state-of-the-art remote laboratory and expert-led programs, we empower learners to explore, experiment, and excel in the fields of robotics and artificial intelligence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="technologies-section" id="technologies">
+            <h2>Technologies We Work With</h2>
+            <p class="section-subtitle">Cutting-edge Tools and Platforms</p>
+            <div class="tech-slider">
+                <div class="tech-track">
+                    <!-- AI Tools -->
+                    <div class="tech-item">
+                        <img src="assets/images/tensorflow.png" alt="TensorFlow">
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/pytorch.png" alt="PyTorch">
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/opencv.png" alt="OpenCV">
+                        <span>OpenCV</span>
+                    </div>
+                    <!-- Robotics Tools -->
+                    <div class="tech-item">
+                        <img src="assets/images/ros.png" alt="ROS">
+                        <span>ROS</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/gazebo.png" alt="Gazebo">
+                        <span>Gazebo</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/arduino.png" alt="Arduino">
+                        <span>Arduino</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients-section" id="clients">
+            <h2>Our Clients</h2>
+            <p class="section-subtitle">Trusted by Leading Organizations</p>
+            <div class="clients-slider">
+                <div class="clients-track">
+                    <div class="client-item">
+                        <img src="assets/images/client1.png" alt="Client 1">
+                    </div>
+                    <div class="client-item">
+                        <img src="assets/images/client2.png" alt="Client 2">
+                    </div>
+                    <div class="client-item">
+                        <img src="assets/images/client3.png" alt="Client 3">
+                    </div>
+                    <div class="client-item">
+                        <img src="assets/images/client4.png" alt="Client 4">
+                    </div>
+                    <div class="client-item">
+                        <img src="assets/images/client5.png" alt="Client 5">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>Join the Future of Robotics & AI Today!</h2>
+            <a href="schedule.html" class="cta-button">Get Started</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@techroboticslab.com</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="schedule.html">Schedule Access</a>
+                <a href="#features">Explore Features</a>
+                <a href="#programs">View Programs</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Remote Robotics Lab. All rights reserved.</p>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
